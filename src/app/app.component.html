@@ -1,0 +1,54 @@
+<header class="header">
+  <div class="container header-content">
+    <div class="logo">
+      <div class="logo-text" routerLink="/" style="cursor: pointer;">
+        <span class="logo-highlight">Construtora</span> Silva
+      </div>
+    </div>
+    
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/sobre-nos" routerLinkActive="active">Sobre nós</a></li>
+        <li><a routerLink="/produtos" routerLinkActive="active">Produtos</a></li>
+        <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-primary" routerLink="/contato">Solicitar Orçamento</button>
+    </div>
+  </div>
+</header>
+
+<main style="padding-top: 80px; min-height: 100vh;">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text"><span class="logo-highlight">Construtora</span> Silva</div>
+      <p class="mt-4 text-muted">A sua parceira confiável para construções de alto padrão, garantindo eficiência, prazo e qualidade impecável.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/sobre-nos">Sobre Nós</a></li>
+        <li><a routerLink="/produtos">Empreendimentos</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <ul>
+        <li>(21) 9999-9999</li>
+        <li>contato@construtorasilva.com</li>
+        <li>São Paulo, SP - Brasil</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2026 Construtora Silva. Todos os direitos reservados.</p>
+  </div>
+</footer>
