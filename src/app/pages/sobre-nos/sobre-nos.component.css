@@ -103,16 +103,31 @@
 }
 
 @media (max-width: 1024px) {
+  .manifesto-wrapper { padding-top: 120px; }
   .manifesto-split {
     flex-direction: column;
-    gap: 5vh;
+    gap: 40px;
+    padding: 0 6vw;
   }
   .manifesto-image-box {
     width: 100%;
-    height: 50vh;
+    height: 40vh;
   }
+  .manifesto-text-box {
+    padding: 20px 0;
+    max-width: 100%;
+  }
+  .manifesto-body { font-size: 1.1rem; }
+  
+  .principles-banner { padding: 60px 0; }
   .principles-row {
     flex-direction: column;
-    gap: 8vh;
+    gap: 40px;
   }
+  .principle-item h4 { font-size: 2rem; margin-bottom: 12px; }
+}
+
+@media (max-width: 480px) {
+  .manifesto-intro { padding-bottom: 20px; }
+  .title-massive { font-size: 2.5rem; }
 }

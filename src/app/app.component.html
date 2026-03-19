@@ -22,30 +22,70 @@
   <router-outlet></router-outlet>
 </main>
 
-<footer class="footer-massive">
-  <div class="line-separator"></div>
-  <div class="container footer-grid">
-    <div class="footer-top">
-      <h2 class="title-massive">Construindo<br>o amanhã.</h2>
-    </div>
-    
-    <div class="footer-bottom">
-      <div class="footer-col">
-        <span class="subtitle-minimal">Business</span>
-        <a href="mailto:contact@construtorasilva.com" class="footer-link">contact&#64;construtorasilva.com</a>
-        <a href="tel:+554899999999" class="footer-link">+55 48 9999 9999</a>
-      </div>
-      
-      <div class="footer-col">
-        <span class="subtitle-minimal">Headquarters</span>
-        <p class="footer-text">Rua da Arquitetura, 192<br>Pio Corrêa, Criciúma/SC</p>
+<footer class="footer-structured">
+  <div class="footer-main-container">
+    <div class="footer-grid-layout">
+      <!-- Column 1: Brand -->
+      <div class="footer-brand-col">
+        <a routerLink="/" class="logo-mark">
+          Con<br>strutora<br>Silva
+        </a>
+        <p class="brand-desc">
+          Refúgios de alto padrão onde a sua <br>história ganha vida com excelência.
+        </p>
+        <div class="social-circles">
+          <a href="#" aria-label="Instagram" class="social-icon">IN</a>
+          <a href="#" aria-label="LinkedIn" class="social-icon">LI</a>
+          <a href="#" aria-label="YouTube" class="social-icon">YT</a>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <span class="subtitle-minimal">Social</span>
-        <a href="#" class="footer-link">Instagram</a>
-        <a href="#" class="footer-link">LinkedIn</a>
+      <!-- Column 2: Institucional -->
+      <div class="footer-links-col">
+        <span class="footer-heading">Institucional</span>
+        <nav class="footer-nav">
+          <a routerLink="/">Home</a>
+          <a routerLink="/sobre-nos">Manifesto</a>
+          <a routerLink="/produtos">Obras</a>
+          <a routerLink="/contato">Talk</a>
+        </nav>
+      </div>
+
+      <!-- Column 3: Obras -->
+      <div class="footer-links-col">
+        <span class="footer-heading">Obras</span>
+        <nav class="footer-nav">
+          <a routerLink="/produtos">Residencial</a>
+          <a routerLink="/produtos">Comercial</a>
+          <a routerLink="/produtos">Reformas</a>
+        </nav>
+      </div>
+
+      <!-- Column 4: Contato & Newsletter -->
+      <div class="footer-contact-col">
+        <span class="footer-heading">Contato</span>
+        <p class="contact-detail"><strong>Endereço</strong><br>Rua da Arquitetura, 192 — Criciúma/SC</p>
+        <p class="contact-detail"><strong>Tel.</strong> (48) 9999-9999</p>
+        <p class="contact-detail"><strong>E-mail</strong> contato&#64;construtorasilva.com</p>
+        
+        <div class="newsletter-box">
+          <span class="footer-heading">Newsletter</span>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Seu e-mail" class="news-input">
+            <button type="submit" class="news-btn">Assinar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="copyright">
+        © 2024 Construtora Silva. Todos os direitos reservados.
+      </div>
+      <div class="credits">
+        Desenvolvido por Antigravity
       </div>
     </div>
   </div>
 </footer>
+

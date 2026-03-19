@@ -558,7 +558,13 @@ body, html {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1200px) {
+  .headline-avantgarde { font-size: clamp(3rem, 7vw, 5rem); }
+}
+
 @media (max-width: 1024px) {
+  .section-padding { padding: 8vh 0; }
+  
   .cred-grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 3rem;
@@ -569,34 +575,46 @@ body, html {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 4rem;
   }
+  
+  .ba-card { height: 500px; }
 }
 
 @media (max-width: 768px) {
-  .headline-avantgarde { font-size: clamp(3rem, 10vw, 4rem); }
-  .headline-italic { display: block; margin-left: 0; }
+  .section-padding { padding: 60px 0; }
   
-  .ba-grid {
-    grid-template-columns: 1fr;
-  }
-  .ba-card {
-    height: 400px;
-  }
+  .headline-avantgarde { font-size: 3rem; line-height: 1.1; margin-bottom: 1.5rem; }
+  .headline-italic { display: block; margin-left: 0; margin-top: 0.5rem; }
   
-  .cred-grid {
-    grid-template-columns: 1fr;
-  }
+  .hero-bottom-text { margin-top: 2rem; }
+  .hero-description { font-size: 1.1rem; }
+  
+  .cred-number { font-size: 2.8rem; }
+  
+  .services-grid { grid-template-columns: 1fr; }
+  
+  .projects-gallery { grid-template-columns: 1fr; }
+  .proj-card { height: 400px; }
+  
+  .ba-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .ba-card { height: 350px; }
+  
+  .why-grid { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
+  
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card { padding: 2rem; }
+  
+  .cred-grid { grid-template-columns: 1fr; gap: 2rem; }
   .cred-item::after { display: none !important; }
   
-  .process-grid {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
-  }
+  .process-grid { grid-template-columns: 1fr; row-gap: 3rem; }
   
-  .cta-actions {
-    flex-direction: column;
-  }
-  .btn-large {
-    width: 100%;
-    justify-content: center;
-  }
+  .cta-massive { padding: 80px 0; }
+  .cta-actions { flex-direction: column; width: 100%; max-width: 400px; margin: 0 auto; }
+  .btn-large { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .headline-avantgarde { font-size: 2.5rem; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .btn-solid-gold, .btn-outline { width: 100%; justify-content: center; }
 }

@@ -237,12 +237,24 @@
 .btn-outline-light:hover { gap: 15px; color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
 
 @media (max-width: 1024px) {
-  .gallery-item { height: 70vh; }
-  .gallery-image { width: 100vw; }
-  .gallery-content { mix-blend-mode: normal; }
-  .gallery-item:not(.reverse) .gallery-image, .gallery-item.reverse .gallery-image { right: 0; left: 0; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .lightbox-content { height: 60vh; width: 100vw; }
-  .nav-arrow { font-size: 2rem; }
+  .portfolio-wrapper { padding-top: 100px; }
+  .gallery-immersive { gap: 10vh; margin-top: 5vh; }
+  .gallery-item { height: 60vh; width: 100%; }
+  .gallery-image { width: 100%; right: 0 !important; left: 0 !important; }
+  .gallery-content { mix-blend-mode: normal; padding: 0 5vw; }
+  .gallery-title { font-size: 3rem; }
+  
+  .projects-grid { grid-template-columns: 1fr; gap: 40px; }
+  .project-img-box { height: 40vh; }
+  .project-title { font-size: 1.8rem; }
+  
+  .lightbox-content { height: 50vh; width: 100vw; }
+  .nav-arrow { font-size: 2rem; padding: 10px; }
   .lightbox-footer { position: relative; bottom: 0; left: 0; margin-top: 5vh; text-align: center; padding: 0 4vw; }
+  .lightbox-title { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .gallery-title { font-size: 2.2rem; }
+  .btn-close { top: 20px; right: 20px; font-size: 2rem; }
 }

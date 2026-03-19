@@ -120,15 +120,25 @@
 }
 
 @media (max-width: 1024px) {
+  .contact-wrapper { padding-top: 120px; }
+  .contact-header { margin-bottom: 6vh; }
+  .contact-poetic { font-size: 1.2rem; }
+  
   .contact-grid {
     flex-direction: column;
+    gap: 40px;
   }
+  .contact-form-minimal { gap: 4vh; }
+  .input-line { font-size: 1.5rem; }
+  
   .contact-info-minimal {
     border-left: none;
     border-top: 1px solid var(--line-color);
     padding-left: 0;
-    padding-top: 5vh;
-    margin-top: 5vh;
+    padding-top: 40px;
+    margin-top: 20px;
+    flex: none;
+    width: 100%;
   }
 }
 
