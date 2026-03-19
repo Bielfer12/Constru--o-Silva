@@ -1,39 +1,89 @@
-<section id="produtos" class="section products bg-secondary" style="min-height: calc(100vh - 80px);">
-  <div class="container">
-    <div class="products-header text-center">
-      <h2 class="section-title">Nossos Empreendimentos</h2>
-      <p class="section-desc">Descubra as coleções mais recentes com estética impecável e acabamento premium.</p>
+<div class="portfolio-wrapper">
+  
+  <!-- VIEW 1: Categories List -->
+  <ng-container *ngIf="!selectedCategory">
+    <div class="portfolio-intro container">
+      <h2 class="title-editorial">Portfólio</h2>
+      <p class="portfolio-desc">Onde a técnica se rende à arte de viver e trabalhar com plenitude. Selecione uma coleção de obras.</p>
     </div>
+
+    <div class="gallery-immersive">
+      <div 
+        class="gallery-item" 
+        *ngFor="let cat of categories; let i = index" 
+        [ngClass]="{'reverse': i % 2 !== 0}"
+        (click)="selectCategory(cat)">
+        
+        <div class="gallery-image parallax">
+          <img [src]="cat.coverImage" [alt]="cat.title">
+          <div class="hover-overlay"><span>Explorar Construções &rarr;</span></div>
+        </div>
+        
+        <div class="gallery-content container">
+          <span class="gallery-index">0{{ i + 1 }}</span>
+          <h3 class="gallery-title">{{ cat.title }}</h3>
+          <p class="gallery-category">{{ cat.subtitle }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- VIEW 2: Sub-Projects List -->
+  <ng-container *ngIf="selectedCategory">
+    <div class="portfolio-intro container">
+      <div class="breadcrumbs">
+        <a href="javascript:void(0)" (click)="goBack()" class="back-link">&larr; Voltar às Categorias</a>
+      </div>
+      <h2 class="title-massive">{{ selectedCategory.title }}</h2>
+      <p class="portfolio-desc">{{ selectedCategory.subtitle }}</p>
+    </div>
+
+    <!-- The 4 projects grid -->
+    <div class="projects-grid container section">
+      <div class="project-card" *ngFor="let proj of selectedCategory.projects">
+        
+        <!-- Main Project Image (Triggers Lightbox) -->
+        <div class="project-img-box" (click)="openLightbox(proj)">
+          <img [src]="proj.images[0]" [alt]="proj.name">
+          <div class="hover-overlay-zoom"><span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.9999 21L16.6499 16.65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 8V14M8 11H14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ampliar Galeria</span></div>
+        </div>
+
+        <div class="project-details">
+          <h3 class="project-title">{{ proj.name }}</h3>
+          <p class="project-desc">{{ proj.description }}</p>
+          <a routerLink="/contato" class="btn-outline">Consultar Especialista &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- LIGHTBOX VIRTUAL GALLERY -->
+  <div class="lightbox-overlay" *ngIf="isLightboxOpen && selectedProject" (click)="closeLightbox()">
     
-    <div class="products-grid">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <img src="assets/modern_living_room_1773833519687.png" alt="Living Contemporâneo" class="product-img">
-          <div class="product-overlay">
-            <button class="btn-primary">Ver Portfólio</button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3>Living Contemporâneo</h3>
-          <p>Design de Interiores Alto Padrão</p>
-          <div class="product-price">Sob consulta</div>
-        </div>
+    <button class="btn-close" (click)="closeLightbox()">&times;</button>
+    
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <!-- Navigation Left -->
+      <button class="nav-arrow left" (click)="prevImage($event)" *ngIf="selectedProject.images.length > 1">&larr;</button>
+      
+      <!-- Main Image Display -->
+      <div class="lightbox-image-container">
+        <img [src]="selectedProject.images[currentImageIndex]" class="lightbox-image" alt="Gallery Image">
+        <div class="lightbox-counter">{{ currentImageIndex + 1 }} / {{ selectedProject.images.length }}</div>
       </div>
-      <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-img-wrapper">
-          <img src="assets/modern_dining_room_1773833534916.png" alt="Sala de Jantar" class="product-img">
-          <div class="product-overlay">
-            <button class="btn-primary">Ver Portfólio</button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3>Sala de Jantar Minimalista</h3>
-          <p>Acabamento Fino</p>
-          <div class="product-price">Sob consulta</div>
-        </div>
-      </div>
+      
+      <!-- Navigation Right -->
+      <button class="nav-arrow right" (click)="nextImage($event)" *ngIf="selectedProject.images.length > 1">&rarr;</button>
     </div>
+
+    <!-- Description in Lightbox (Optional extension of UX) -->
+    <div class="lightbox-footer" (click)="$event.stopPropagation()">
+      <h3 class="lightbox-title">{{ selectedProject.name }}</h3>
+      <p class="lightbox-desc">{{ selectedProject.description }}</p>
+      <a routerLink="/contato" class="btn-outline-light" (click)="closeLightbox()">Agendar Visita &rarr;</a>
+    </div>
+
   </div>
-</section>
+
+</div>

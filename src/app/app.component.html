@@ -1,54 +1,51 @@
-<header class="header">
-  <div class="container header-content">
-    <div class="logo">
-      <div class="logo-text" routerLink="/" style="cursor: pointer;">
-        <span class="logo-highlight">Construtora</span> Silva
-      </div>
-    </div>
+<header class="header-minimal">
+  <div class="header-container">
+    <a routerLink="/" class="logo-mark">
+      Con<br>strutora<br>Silva
+    </a>
     
-    <nav class="desktop-nav">
-      <ul class="nav-links">
-        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-        <li><a routerLink="/sobre-nos" routerLinkActive="active">Sobre nós</a></li>
-        <li><a routerLink="/produtos" routerLinkActive="active">Produtos</a></li>
-        <li><a routerLink="/contato" routerLinkActive="active">Contato</a></li>
-      </ul>
+    <nav class="nav-minimal desktop-only">
+      <a routerLink="/sobre-nos" routerLinkActive="active-link">Manifesto</a>
+      <a routerLink="/produtos" routerLinkActive="active-link">Obras</a>
+      <a routerLink="/contato" routerLinkActive="active-link">Talk</a>
     </nav>
 
-    <div class="header-actions">
-      <button class="btn-primary" routerLink="/contato">Solicitar Orçamento</button>
-    </div>
+    <!-- Mobile Menu Toggle (simplified for aesthetics) -->
+    <button class="menu-toggle">
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
   </div>
 </header>
 
-<main style="padding-top: 80px; min-height: 100vh;">
+<main class="page-wrapper">
   <router-outlet></router-outlet>
 </main>
 
-<footer class="footer">
+<footer class="footer-massive">
+  <div class="line-separator"></div>
   <div class="container footer-grid">
-    <div class="footer-brand">
-      <div class="logo-text"><span class="logo-highlight">Construtora</span> Silva</div>
-      <p class="mt-4 text-muted">A sua parceira confiável para construções de alto padrão, garantindo eficiência, prazo e qualidade impecável.</p>
+    <div class="footer-top">
+      <h2 class="title-massive">Construindo<br>o amanhã.</h2>
     </div>
-    <div class="footer-links">
-      <h4>Navegação</h4>
-      <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/sobre-nos">Sobre Nós</a></li>
-        <li><a routerLink="/produtos">Empreendimentos</a></li>
-      </ul>
+    
+    <div class="footer-bottom">
+      <div class="footer-col">
+        <span class="subtitle-minimal">Business</span>
+        <a href="mailto:contact@construtorasilva.com" class="footer-link">contact&#64;construtorasilva.com</a>
+        <a href="tel:+554899999999" class="footer-link">+55 48 9999 9999</a>
+      </div>
+      
+      <div class="footer-col">
+        <span class="subtitle-minimal">Headquarters</span>
+        <p class="footer-text">Rua da Arquitetura, 192<br>Pio Corrêa, Criciúma/SC</p>
+      </div>
+
+      <div class="footer-col">
+        <span class="subtitle-minimal">Social</span>
+        <a href="#" class="footer-link">Instagram</a>
+        <a href="#" class="footer-link">LinkedIn</a>
+      </div>
     </div>
-    <div class="footer-contact">
-      <h4>Contato</h4>
-      <ul>
-        <li>(21) 9999-9999</li>
-        <li>contato@construtorasilva.com</li>
-        <li>São Paulo, SP - Brasil</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>Copyright © 2026 Construtora Silva. Todos os direitos reservados.</p>
   </div>
 </footer>

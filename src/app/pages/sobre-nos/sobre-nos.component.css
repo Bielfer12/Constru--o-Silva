@@ -1,0 +1,118 @@
+/* Manifesto / Sobre Nós CSS */
+
+.manifesto-wrapper {
+  background-color: var(--bg-color);
+  padding-top: 20vh;
+}
+
+.container-narrow {
+  max-width: 1200px;
+}
+
+.manifesto-intro {
+  padding-bottom: 5vh;
+}
+
+.manifesto-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4vw;
+  gap: 10vw;
+}
+
+.manifesto-image-box {
+  flex: 1;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.manifesto-image-box img {
+  width: 100%;
+  height: 120%; /* For parallax potential */
+  object-fit: cover;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  filter: grayscale(40%) contrast(1.2);
+}
+
+.manifesto-text-box {
+  flex: 1;
+  max-width: 600px;
+  padding: 10vh 0;
+}
+
+.mb-10 {
+  margin-bottom: 8vh;
+}
+
+.manifesto-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 24px;
+}
+
+.manifesto-body {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Principles */
+.principles-banner {
+  padding: 15vh 0;
+}
+
+.mb-4 {
+  margin-bottom: 6vh;
+}
+
+.principles-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4vw;
+}
+
+.principle-item {
+  flex: 1;
+}
+
+.principle-item h4 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-main);
+  margin-bottom: 24px;
+}
+
+.principle-item p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .manifesto-split {
+    flex-direction: column;
+    gap: 5vh;
+  }
+  .manifesto-image-box {
+    width: 100%;
+    height: 50vh;
+  }
+  .principles-row {
+    flex-direction: column;
+    gap: 8vh;
+  }
+}

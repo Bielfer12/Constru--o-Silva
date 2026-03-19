@@ -1,13 +1,62 @@
-<section class="cta-section" style="min-height: calc(100vh - 80px); display: flex; align-items: center;">
-  <div class="container text-center cta-container">
-    <h2 class="section-title">Pronto para iniciar seu projeto?</h2>
-    <p class="section-desc mb-4" style="margin-bottom: 3rem;">Preencha o formulário abaixo e um de nossos especialistas entrará em contato.</p>
+<div class="contact-wrapper">
+  
+  <div class="container contact-container">
     
-    <form class="contact-form" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
-      <input type="text" placeholder="Seu Nome completo" style="padding: 16px; border: 1px solid #E5E7EB; border-radius: 8px; font-family: inherit; font-size: 1rem;">
-      <input type="email" placeholder="E-mail" style="padding: 16px; border: 1px solid #E5E7EB; border-radius: 8px; font-family: inherit; font-size: 1rem;">
-      <textarea placeholder="Gostaria de falar sobre..." rows="4" style="padding: 16px; border: 1px solid #E5E7EB; border-radius: 8px; resize: none; font-family: inherit; font-size: 1rem;"></textarea>
-      <button class="btn-primary btn-lg" style="margin-top: 16px;">Enviar Mensagem</button>
-    </form>
+    <div class="contact-header">
+      <h2 class="title-massive">Let's<br><span class="title-editorial">Build.</span></h2>
+      <p class="contact-poetic mt-6">
+        Acreditamos que todo grande legado nasce de uma boa conversa. 
+        Um café é o primeiro passo para o seu projeto ganhar forma. 
+        Venha traçar as linhas do seu futuro conosco.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Minimalist Form -->
+      <form class="contact-form-minimal">
+        <div class="form-row">
+          <input type="text" class="input-line" placeholder="Name." required>
+        </div>
+        <div class="form-row">
+          <input type="email" class="input-line" placeholder="Email." required>
+        </div>
+        <div class="form-row">
+          <textarea class="input-line textarea-line" placeholder="Project details." rows="1" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn-minimal">
+          <span class="btn-text">Send Request</span>
+          <span class="btn-arrow">&xrarr;</span>
+        </button>
+      </form>
+
+      <!-- Office info -->
+      <div class="contact-info-minimal">
+        <div class="info-block">
+          <span class="subtitle-minimal">Headquarters</span>
+          <p>Rua da Arquitetura, 192<br>Bairro Pio Corrêa<br>Criciúma / SC</p>
+        </div>
+        <div class="info-block mt-4">
+          <span class="subtitle-minimal">Direct</span>
+          <p>+55 48 9999 9999<br>contact&#64;construtorasilva.com</p>
+        </div>
+      </div>
+    </div>
+    
   </div>
-</section>
+
+    <div class="map-section mt-6">
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.321!2d-49.37!3d-28.67!2m3!1f0!2f0!3f0!3M2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDQwJzEyLjAiUyA0OcKwMjInMTIuMCJX!5e0!3m2!1sen!2sbr!4v1700000000000!5m2!1sen!2sbr" 
+          width="100%" 
+          height="100%"
+          style="border:0;"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    
+  </div>

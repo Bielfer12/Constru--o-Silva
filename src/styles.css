@@ -1,28 +1,19 @@
 :root {
-  /* Colors */
-  --primary: #EF4444; /* Vermelho vibrante leve */
-  --primary-hover: #DC2626;
-  --primary-light: #FEE2E2;
+  /* Ultra-minimal avant-garde palette */
+  --bg-color: #050505;
+  --text-main: #FAFAFA;
+  --text-muted: #8A8A8A;
+  --accent-gold: #c5a47e;
+  --accent-gold-hover: #e8cca7;
   
-  --secondary: #F3EFE9; /* Creme suave para fundos (secundária) */
-  --secondary-dark: #E4DFD8;
-  
-  --text-main: #1F2937; /* Cinza escuro / Carvão */
-  --text-muted: #6B7280;
-  --white: #FFFFFF;
-  
-  /* Tyopgraphy */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --line-color: rgba(255, 255, 255, 0.1);
 
-  /* Constraints */
-  --max-width: 1200px;
-  
-  /* Utilities */
-  --transition: all 0.3s ease;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-body: 'Inter', 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -31,26 +22,30 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font-body);
+html, body {
+  background-color: var(--bg-color);
   color: var(--text-main);
-  background-color: var(--white);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
+/* Elegant Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
+  font-weight: 300;
+  line-height: 1.1;
   color: var(--text-main);
+  margin: 0;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition);
+  transition: var(--transition-smooth);
 }
 
 ul {
@@ -63,55 +58,70 @@ button {
   background: none;
   font-family: inherit;
   color: inherit;
+  outline: none;
 }
 
-/* Common Classes */
+/* Base Layout Classes */
 .container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 24px;
-}
-
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-family: var(--font-body);
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-secondary {
-  background-color: var(--white);
-  color: var(--text-main);
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #E5E7EB;
-}
-
-.btn-secondary:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  box-shadow: var(--shadow-sm);
+  padding: 0 4vw;
 }
 
 .section {
-  padding: 80px 0;
+  padding: 12vh 0;
+  position: relative;
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.title-massive {
+  font-size: clamp(4rem, 10vw, 9rem);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.title-editorial {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold);
+}
+
+.subtitle-minimal {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-bottom: 2vh;
+}
+
+.line-separator {
+  width: 100%;
+  height: 1px;
+  background: var(--line-color);
+}
+
+/* Avant-Garde Minimal Buttons */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--accent-gold);
+  padding-bottom: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  gap: 20px;
+  color: var(--text-main);
+  border-bottom-color: var(--text-main);
 }
