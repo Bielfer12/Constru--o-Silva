@@ -11,12 +11,21 @@
     </nav>
 
     <!-- Mobile Menu Toggle (simplified for aesthetics) -->
-    <button class="menu-toggle">
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen()">
       <span class="line"></span>
       <span class="line"></span>
     </button>
   </div>
 </header>
+
+<div class="mobile-menu-overlay" [class.open]="isMenuOpen()">
+  <nav class="mobile-nav">
+    <a routerLink="/" (click)="closeMenu()">Home</a>
+    <a routerLink="/sobre-nos" (click)="closeMenu()">Manifesto</a>
+    <a routerLink="/produtos" (click)="closeMenu()">Obras</a>
+    <a routerLink="/contato" (click)="closeMenu()">Talk</a>
+  </nav>
+</div>
 
 <main class="page-wrapper">
   <router-outlet></router-outlet>
