@@ -119,29 +119,6 @@
   margin-top: 1vh;
 }
 
-@media (max-width: 1024px) {
-  .contact-wrapper { padding-top: 120px; }
-  .contact-header { margin-bottom: 6vh; }
-  .contact-poetic { font-size: 1.2rem; }
-  
-  .contact-grid {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .contact-form-minimal { gap: 4vh; }
-  .input-line { font-size: 1.5rem; }
-  
-  .contact-info-minimal {
-    border-left: none;
-    border-top: 1px solid var(--line-color);
-    padding-left: 0;
-    padding-top: 40px;
-    margin-top: 20px;
-    flex: none;
-    width: 100%;
-  }
-}
-
 /* Map Section */
 .map-section {
   width: 100%;
@@ -163,7 +140,6 @@
   width: 100%;
   height: 100%;
   border: 0;
-  /* Dark mode filter for modern aesthetic */
   filter: grayscale(100%) invert(92%) contrast(110%);
   opacity: 0.8;
   transition: opacity 0.5s ease, filter 0.5s ease;
@@ -172,4 +148,126 @@
 .map-container:hover iframe {
   opacity: 1;
   filter: grayscale(100%) invert(92%) contrast(120%);
+}
+
+@media (max-width: 1024px) {
+  .contact-wrapper {
+    padding-top: 120px;
+    padding-bottom: 10vh;
+  }
+  .contact-header {
+    margin-bottom: 6vh;
+  }
+  .contact-poetic {
+    font-size: 1.2rem;
+  }
+  .contact-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-form-minimal {
+    gap: 4vh;
+    max-width: 100%;
+  }
+  .input-line {
+    font-size: 1.8rem;
+  }
+  .contact-info-minimal {
+    border-left: none;
+    border-top: 1px solid var(--line-color);
+    padding-left: 0;
+    padding-top: 40px;
+    margin-top: 20px;
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  .contact-header {
+    margin-bottom: 4vh;
+  }
+  .contact-poetic {
+    font-size: 1.05rem;
+    max-width: 100%;
+    line-height: 1.7;
+  }
+  .mt-6 {
+    margin-top: 4vh;
+  }
+  .mt-4 {
+    margin-top: 3vh;
+  }
+  .contact-grid {
+    gap: 32px;
+  }
+  .contact-form-minimal {
+    gap: 3vh;
+  }
+  .input-line {
+    font-size: 1.4rem;
+    padding: 8px 0;
+  }
+  .input-line::placeholder {
+    font-size: 1.4rem;
+  }
+  .textarea-line {
+    min-height: 50px;
+  }
+  .submit-btn-minimal {
+    margin-top: 2vh;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+  .btn-arrow {
+    font-size: 1.2rem;
+  }
+  .contact-info-minimal {
+    gap: 3vh;
+    padding-top: 32px;
+  }
+  .info-block p {
+    font-size: 1rem;
+  }
+
+  /* Map */
+  .map-section {
+    margin-top: 8vh;
+    padding-top: 5vh;
+  }
+  .map-container {
+    height: 40vh;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-wrapper {
+    padding-top: 80px;
+    padding-bottom: 48px;
+  }
+  .contact-poetic {
+    font-size: 0.95rem;
+  }
+  .input-line {
+    font-size: 1.2rem;
+  }
+  .input-line::placeholder {
+    font-size: 1.2rem;
+  }
+  .contact-info-minimal {
+    padding-top: 24px;
+    gap: 2.5vh;
+  }
+  .info-block p {
+    font-size: 0.95rem;
+  }
+  .map-container {
+    height: 35vh;
+    min-height: 250px;
+  }
 }

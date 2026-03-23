@@ -125,3 +125,57 @@ button {
   color: var(--text-main);
   border-bottom-color: var(--text-main);
 }
+
+/* ===== RESPONSIVE GLOBAL ===== */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 5vw;
+  }
+  .section {
+    padding: 8vh 0;
+  }
+  .title-massive {
+    font-size: clamp(3rem, 8vw, 6rem);
+  }
+  .title-editorial {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 6vw;
+  }
+  .section {
+    padding: 60px 0;
+  }
+  .title-massive {
+    font-size: clamp(2.2rem, 9vw, 4rem);
+  }
+  .title-editorial {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .subtitle-minimal {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5vh;
+  }
+  .btn-outline {
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+  .title-massive {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .title-editorial {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+}

@@ -557,64 +557,286 @@ body, html {
   flex-wrap: wrap;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1200px) {
-  .headline-avantgarde { font-size: clamp(3rem, 7vw, 5rem); }
+  .headline-avantgarde {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+  .projects-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 @media (max-width: 1024px) {
-  .section-padding { padding: 8vh 0; }
-  
+  .section-padding {
+    padding: 8vh 0;
+  }
+  .hero-wrapper {
+    min-height: 700px;
+  }
+  .hero-content {
+    padding-bottom: 10vh;
+  }
+
   .cred-grid {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 3rem;
+    row-gap: 2.5rem;
   }
-  .cred-item:nth-child(2)::after { display: none; }
-  
+  .cred-item:nth-child(2)::after {
+    display: none;
+  }
+  .cred-number {
+    font-size: 2.8rem;
+  }
+
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 4rem;
   }
-  
-  .ba-card { height: 500px; }
+
+  .ba-card {
+    height: 450px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-  .section-padding { padding: 60px 0; }
-  
-  .headline-avantgarde { font-size: 3rem; line-height: 1.1; margin-bottom: 1.5rem; }
-  .headline-italic { display: block; margin-left: 0; margin-top: 0.5rem; }
-  
-  .hero-bottom-text { margin-top: 2rem; }
-  .hero-description { font-size: 1.1rem; }
-  
-  .cred-number { font-size: 2.8rem; }
-  
-  .services-grid { grid-template-columns: 1fr; }
-  
-  .projects-gallery { grid-template-columns: 1fr; }
-  .proj-card { height: 400px; }
-  
-  .ba-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .ba-card { height: 350px; }
-  
-  .why-grid { grid-template-columns: 1fr; gap: 2rem; padding-top: 2rem; }
-  
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .testimonial-card { padding: 2rem; }
-  
-  .cred-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .cred-item::after { display: none !important; }
-  
-  .process-grid { grid-template-columns: 1fr; row-gap: 3rem; }
-  
-  .cta-massive { padding: 80px 0; }
-  .cta-actions { flex-direction: column; width: 100%; max-width: 400px; margin: 0 auto; }
-  .btn-large { width: 100%; justify-content: center; }
+  .section-padding {
+    padding: 48px 0;
+  }
+
+  /* Hero */
+  .hero-wrapper {
+    min-height: 100svh;
+  }
+  .hero-content {
+    padding-bottom: 8vh;
+  }
+  .headline-avantgarde {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .headline-italic {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+  .subtitle-minimal {
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-bottom-text {
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .btn-solid-gold,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
+
+  /* Credibility Bar */
+  .credibility-bar {
+    padding: 2rem 0;
+  }
+  .cred-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .cred-number {
+    font-size: 2.2rem;
+  }
+  .cred-text {
+    font-size: 0.8rem;
+  }
+  .cred-item::after {
+    display: none !important;
+  }
+
+  /* Services */
+  .services-section .section-header {
+    margin-bottom: 2.5rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+  .service-card h3 {
+    font-size: 1.25rem;
+  }
+  .service-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Section Subtitles */
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  .title-editorial {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  /* Projects */
+  .proj-header {
+    margin-bottom: 2rem;
+  }
+  .projects-gallery {
+    grid-template-columns: 1fr;
+  }
+  .proj-card {
+    height: 350px;
+  }
+
+  /* Before / After */
+  .ba-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ba-card {
+    height: 280px;
+  }
+  .ba-label {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Why Us */
+  .why-us-section .section-header {
+    margin-bottom: 2rem;
+  }
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .why-item h4 {
+    font-size: 1.1rem;
+  }
+  .why-item p {
+    font-size: 0.95rem;
+  }
+
+  /* Testimonials */
+  .testimonials-section .section-header {
+    margin-bottom: 2rem;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  .quote {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .author {
+    font-size: 0.9rem;
+  }
+
+  /* Process */
+  .process-section .section-header {
+    margin-bottom: 3rem;
+  }
+  .process-grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+  .step-num {
+    font-size: 2rem;
+  }
+  .process-step h4 {
+    font-size: 1.25rem;
+  }
+  .process-step p {
+    font-size: 0.95rem;
+  }
+
+  /* CTA */
+  .cta-massive {
+    padding: 60px 0;
+  }
+  .title-massive {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+  .cta-text {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .btn-large {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 1rem;
+    min-height: 48px;
+  }
 }
 
 @media (max-width: 480px) {
-  .headline-avantgarde { font-size: 2.5rem; }
-  .hero-actions { flex-direction: column; width: 100%; }
-  .btn-solid-gold, .btn-outline { width: 100%; justify-content: center; }
+  .section-padding {
+    padding: 36px 0;
+  }
+  .headline-avantgarde {
+    font-size: 2rem;
+  }
+  .hero-actions {
+    gap: 10px;
+  }
+  .btn-solid-gold,
+  .btn-outline {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+  .cred-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .cred-number {
+    font-size: 1.8rem;
+  }
+  .cred-text {
+    font-size: 0.7rem;
+  }
+  .proj-card {
+    height: 280px;
+  }
+  .ba-card {
+    height: 220px;
+  }
+  .cta-massive {
+    padding: 48px 0;
+  }
+  .title-massive {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
 }
