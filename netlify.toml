@@ -1,7 +1,8 @@
+# netlify.toml
 [build]
-  publish = "dist/Constru--o-Silva"
   command = "npm run build"
-
+  publish = "dist/construtora-silva/browser"
+  
 [[redirects]]
   from = "/*"
   to = "/index.html"
